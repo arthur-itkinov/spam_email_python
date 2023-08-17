@@ -10,15 +10,11 @@ import openpyxl
 
 def send_email(to_mail):
 
-    # sender = 'itkinov6@gmail.com'
-    # passwd = "xvisibffirlmkuni"
-    # server = smtplib.SMTP("smtp.gmail.com", 587)
-    sender = 'info@aktivkredit.ru'
-    sender2 = 'info2@aktivkredit.ru'
-    sender3 = 'info3@aktivkredit.ru'
-    passwd = "niqhgpavrrwudtcn"
-    passwd2 = 'wjnlafyjocwgpfrh'
-    passwd3 = 'lhyvgzyvfzcdegkn'
+ 
+    sender = '...' # сюда логин 
+    
+    passwd = "..." # сюда пароль
+    
 
     server = smtplib.SMTP('smtp.yandex.ru', 587)
     server.starttls()
@@ -34,7 +30,7 @@ def send_email(to_mail):
         msg = MIMEMultipart()
         msg["From"] = sender
         msg["To"] = to_mail
-        msg['Subject'] = 'Новости Актив Кредит'
+        msg['Subject'] = 'Тема письма'
         msg.attach(MIMEText(template, "html", "utf-8"))
         server.sendmail(sender, to_mail, msg.as_string())
 
